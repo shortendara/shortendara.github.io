@@ -38,3 +38,11 @@ gulp.task('images', ['clean'],() =>{
 });
 
 gulp.task('default', ['minify-css', 'images']);
+
+var beautify = require('gulp-beautify');
+ 
+gulp.task('beautify', function() {
+  gulp.src('./build/css/agency.css')
+    .pipe(beautify({indent_size: 2}))
+    .pipe(gulp.dest('.css/aggency.css'))
+});
